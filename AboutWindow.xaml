@@ -1,0 +1,9 @@
+﻿<Window x:Class="EVE_Industrial_Toolbox.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About EVE Industrial Toolbox" Height="292" Width="494">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="EVE Industrial Toolkit" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
