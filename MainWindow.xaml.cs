@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 
 
 namespace EVE_Industrial_Toolbox
@@ -20,11 +19,16 @@ namespace EVE_Industrial_Toolbox
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            Properties.Settings.Default.Upgrade();
+            Properties.Settings.Default.Save();
+
+            EVE_IT_GlobalData.UnserializeSettings();
         }
 
         private void MenuItem_File_Exit_Click(object sender, RoutedEventArgs e)
@@ -34,6 +38,12 @@ namespace EVE_Industrial_Toolbox
             //{
                 Application.Current.Shutdown();
             //}
+        }
+
+        private void MenuItem_File_ManageAPI_Click(object sender, RoutedEventArgs e)
+        {
+            ManageAPIWindow APIWindow = new ManageAPIWindow();
+            APIWindow.ShowDialog();
         }
     }
 }
